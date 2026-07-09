@@ -1,0 +1,17 @@
+#Dnyaneshwari Bhoyar-09
+
+import numpy as np
+sample_space = np.arange(1, 7)
+prime_numbers = np.array([2, 3, 5])
+
+roll = int(input("Enter a die roll (1-6): "))
+
+if roll in sample_space:
+    probability = len(prime_numbers) / len(sample_space)
+    if roll in prime_numbers:
+        print(f"{roll} is a prime number.")
+    else:
+        print(f"{roll} is not a prime number.")
+    print("Probability of getting a prime number:", probability)
+else:
+    print("Invalid input! Please enter a number from 1 to 6.")
