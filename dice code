@@ -1,0 +1,37 @@
+#Dnyaneshwari Bhoyar-09
+
+import numpy as np;
+import matplotlib.pyplot as plt;
+
+rolls = np.random.randint(1, 7, 100)
+
+counts = np.bincount(rolls)[1:]
+count_6 = counts[5]
+probability = count_6 / len(rolls)
+
+print("Occurence of each face:")
+for i, count in enumerate(counts, start=1):
+    print(f"{i}: {count}")
+
+print(f"\n Number of times 6 occured: {count_6}")
+print(f"Experimental probability of rolling a 6: {probability:.4f}")
+
+faces = np.arange(1,7)
+
+plt.figure(figsize=(8,5))
+plt.bar(faces, counts, color='skyblue', edgecolor='black')
+
+plt.bar(6, count_6, color='orange', edgecolor='black', label = 'face 6')
+plt.title("Dice Roll Simulation (1000 Rolls)")
+plt.xlabel("Die Face")
+plt.ylabel("Frequency")
+plt.xticks(faces)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.legend()
+
+plt.text(3.5, max(counts) * 0.95,
+         f"P(6) = {probability:.4f}",
+         fontsize=12,
+         bbox=dict(facecolor='white', alpha=0.8))
+
+plt.show()
