@@ -1,0 +1,18 @@
+# Dnyaneshwari Bhoyar-09
+
+import numpy as np
+
+sample_space = np.arange(1, 7)
+even_numbers = np.array([2, 4, 6])
+
+roll = int(input("Enter a die roll (1-6): "))
+
+if roll in sample_space:
+    probability = len(even_numbers) / len(sample_space)
+    if roll in even_numbers:
+        print(f"{roll} is an even number.")
+    else:
+        print(f"{roll} is not an even number.")
+    print("Probability of getting an even number:", probability)
+else:
+    print("Invalid input! Please enter a number from 1 to 6.")
